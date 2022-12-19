@@ -3,7 +3,6 @@ import {ButtonsPizzaSort, PizzaSortSelect, PizzasSortContainer} from "./pizzasSo
 
 const PizzasListSort = () => {
 
-
     return (
         <div>
 
