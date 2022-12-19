@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Rectangle = styled.div`
+export const  Rectangle = styled.div`
   margin: 40px 0 40px 12px;
 `
 

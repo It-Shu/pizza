@@ -2,6 +2,7 @@ import React from 'react';
 import basket from '../../../assets/basket.svg'
 import {BasketContainer, BasketInfo} from "./basket.style";
 
+
 const Basket = () => {
 
     return (
