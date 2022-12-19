@@ -1,48 +1,68 @@
-import React, {ChangeEvent, MouseEvent, useState} from 'react';
+import React from 'react';
+import PizzaModal from "../pizza_modal/PizzaModal";
+import CheeseburgerPizza from '../../assets/CheesburgerPizza.png'
+import CheesePizza from '../../assets/CheesPizza.png'
+import AsianShrimp from '../../assets/AsianShrimp.png'
+import CheeseChicken from '../../assets/CheeseChicken.png'
+import {PizzasListContainer, PizzasListName} from "./pizzasList.style";
 
-interface pizzaListType {
-    id: number,
-    name: string,
-    price: number,
-}
+const PizzasList = () => {
 
-const   PizzasList = () => {
-
-    const [newPizzaName, setNewPizzaName] = useState('')
-
-    const pizzaList: pizzaListType[] = [
-        {id: 1, name: 'pepperoni', price: 35},
-        {id: 2, name: 'tripleCheese', price: 25},
-        {id: 3, name: 'margarita', price: 15},
-    ]
-
-    const addNewPizza = (e: MouseEvent<HTMLElement>) => {
-
-        const newPizza = {id: 4, name: newPizzaName, price: 45};
-        if (e.currentTarget) {
-            return [...pizzaList, newPizza]
-        }
-
-    }
-
-    const onChangeInput = (e:ChangeEvent<HTMLInputElement>) => {
-        const newPizzaName = e.currentTarget.value
-        setNewPizzaName(newPizzaName)
-    }
-    console.log(newPizzaName)
     return (
         <div>
-            {/*<div>*/}
-            {/*    <input type="text" onChange={onChangeInput}/>*/}
-            {/*    <button onClick={addNewPizza}>add pizza</button>*/}
-            {/*</div>*/}
-            {
-                pizzaList.map((p) => <div key={p.id}>
-                    <div>{p.name}</div>
-                    <div>{p.price}</div>
 
-                </div>)
-            }
+            <PizzasListName>Все пиццы</PizzasListName>
+
+            <PizzasListContainer>
+                <PizzaModal
+                    image={CheeseburgerPizza}
+                    description={'Чизбургер-пицца'}
+                    isAvailable={false}
+                    price={'395'}
+                />
+                <PizzaModal
+                    image={CheesePizza}
+                    description={'Сырная'}
+                    isAvailable={true}
+                    price={'450'}
+                />
+                <PizzaModal
+                    image={AsianShrimp}
+                    description={'Креветки по-азиатски'}
+                    isAvailable={false}
+                    price={'290'}
+                />
+                <PizzaModal
+                    image={CheeseChicken}
+                    description={'Сырный цепленок'}
+                    isAvailable={true}
+                    price={'385'}
+                />
+                <PizzaModal
+                    image={CheeseburgerPizza}
+                    description={'Чизбургер-пицца'}
+                    isAvailable={false}
+                    price={'395'}
+                />
+                <PizzaModal
+                    image={CheesePizza}
+                    description={'Сырная'}
+                    isAvailable={true}
+                    price={'450'}
+                />
+                <PizzaModal
+                    image={AsianShrimp}
+                    description={'Креветки по-азиатски'}
+                    isAvailable={false}
+                    price={'290'}
+                />
+                <PizzaModal
+                    image={CheeseChicken}
+                    description={'Сырный цепленок'}
+                    isAvailable={true}
+                    price={'385'}
+                />
+            </PizzasListContainer>
         </div>
     );
 };
